@@ -1,9 +1,8 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 
-public class Shell : MonoBehaviour
+public class AiScript : MonoBehaviour
 {
     public GameObject explosion;
     float speed = 0f;
@@ -26,18 +25,14 @@ public class Shell : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    private void Start()
+    void Start()
     {
-        acceleration = force / mass;
-        speed += acceleration * 1.0f;
-        gAccel = gravity / mass;
+        
     }
 
     // Update is called once per frame
-    void LateUpdate()
+    void Update()
     {
-        speed *= (1 - Time.deltaTime * drag);
-        yspeed += gAccel * Time.deltaTime;
-        this.transform.Translate(0, yspeed, speed);
+        
     }
 }
